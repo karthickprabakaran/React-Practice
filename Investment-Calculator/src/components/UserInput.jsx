@@ -1,21 +1,13 @@
 import react from 'react';
 import { useState } from 'react';
 
-export default function UserInput() {
+export default function UserInput({ onChange, userInput }) {
 
-  const [userInput, setUserInput] = useState({
-    initialInvestment: '',
-    annualInvestment: '',
-    expectedReturn: '',
-    duration: ''
-  });
+  console.log(userInput.initialInvestment);
+  console.log(userInput.annualInvestment);
+  console.log(userInput.expectedReturn);
+  console.log(userInput.duration);
 
-  function handleChange(fieldName, newValue) {
-    setUserInput({
-      ...userInput,
-      [fieldName]: newValue,
-    });
-  }
 
   return (
     <section>
@@ -25,19 +17,19 @@ export default function UserInput() {
         <form>
           <label>
             Initial Investment:
-            <input type="number" required placeholder="Enter initial amount" onChange={(event) => handleChange('initialInvestment', event.target.value)} />
+            <input type="number" value={userInput.initialInvestment} required placeholder="Enter initial amount" onChange={(event) => onChange('initialInvestment', event.target.value)} />
           </label>
           <label>
             Annual Investment:
-            <input type="number" required placeholder="Enter annual contribution" onChange={(event) => { handleChange('annualInvestment', event.target.value) }} />
+            <input type="number" value={userInput.annualInvestment} required placeholder="Enter annual contribution" onChange={(event) => { onChange('annualInvestment', event.target.value) }} />
           </label>
           <label>
             Expected Return Rate:
-            <input type="number" required placeholder="Enter expected return rate" onChange={(event) => handleChange('expectedReturn', event.target.value)} />
+            <input value={userInput.expectedReturn} type="number" required placeholder="Enter expected return rate" onChange={(event) => onChange('expectedReturn', event.target.value)} />
           </label>
           <label>
             Duration:
-            <input type="number" required placeholder="Enter duration in years" onChange={(event) => handleChange('duration', event.target.value)} />
+            <input value={userInput.duration} type="number" required placeholder="Enter duration in years" onChange={(event) => onChange('duration', event.target.value)} />
           </label>
           <button type="submit">Calculate</button>
         </form>
