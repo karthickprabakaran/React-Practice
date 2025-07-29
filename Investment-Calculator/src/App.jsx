@@ -20,7 +20,7 @@ function App() {
   function handleChange(fieldName, newValue) {
     setUserInput({
       ...userInput,
-      [fieldName]: newValue,
+      [fieldName]: +newValue,
     });
   }
 
