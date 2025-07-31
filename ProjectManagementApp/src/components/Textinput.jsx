@@ -1,7 +1,7 @@
-const Textinput = (label, textarea, ...props) => {
+const Textinput = ({ label, textarea, ...props }) => {
   return (
     <div>
-
+      <label> {label}</label>
       {textarea ? <textarea {...props} /> : <input {...props} />}
     </div>
   )
