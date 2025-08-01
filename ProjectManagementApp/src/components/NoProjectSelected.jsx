@@ -1,7 +1,13 @@
+import { useState } from "react";
 import noProject from "../assets/no-projects.png";
 import Button from "./Button.jsx";
 
 const NoProjectSelected = () => {
+  const [projectState, setProjectState] = useState({
+    selectedProject: undefined,
+    projects: [],
+  });
+
   return (
     <div className="mt-24 text-center w-2/3">
       <img src={noProject} className="w-16 h-16 object-contain mx-auto" />
