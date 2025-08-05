@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import Textinput from "./Textinput";
 
-const NewProject = ({ onAdd }) => {
+const NewProject = ({ onAdd, onCancel }) => {
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();
@@ -26,7 +26,10 @@ const NewProject = ({ onAdd }) => {
     <div className="w-[35rem] mt-16">
       <menu className="flex items-center justify-end gap-4 my-4">
         <li>
-          <button className="text-stone-800 hover:text-stone-950">
+          <button
+            onClick={onCancel}
+            className="text-stone-800 hover:text-stone-950"
+          >
             Cancel
           </button>
         </li>

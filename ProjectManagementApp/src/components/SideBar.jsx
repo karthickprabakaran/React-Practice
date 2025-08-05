@@ -8,8 +8,8 @@ const SideBar = ({ onStartAddProject, projects }) => {
       </h1>
       {projects.map((project) => {
         return (
-          <li className="style-non" key={project.id}>
-            <button className="w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover: bg-stone-800">
+          <li className="list-none" key={project.id}>
+            <button className="w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover:bg-stone-800">
               {project.title}
             </button>
           </li>
