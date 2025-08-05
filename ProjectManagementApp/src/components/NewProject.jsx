@@ -37,9 +37,9 @@ const NewProject = ({ onAdd }) => {
         </li>
       </menu>
       <div>
-        <Textinput ref={title} label="Title" />
+        <Textinput type="text" ref={title} label="Title" />
         <Textinput ref={description} label="Description" textarea={true} />
-        <Textinput ref={dueDate} label="Due Date" />
+        <Textinput type="date" ref={dueDate} label="Due Date" />
       </div>
     </div>
   );
