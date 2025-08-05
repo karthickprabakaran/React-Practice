@@ -11,6 +11,10 @@ const NewProject = ({ onAdd }) => {
     const enteredDescription = description.current.value;
     const enteredDate = dueDate.current.value;
 
+    if (!enteredDate) console.log(" the Date is not entered");
+    if (!enteredTitle) console.log("The Titile is not Entered");
+    if (!enteredDescription) console.log("The Descriptino is not Entered");
+
     onAdd({
       title: enteredTitle,
       description: enteredDate,
