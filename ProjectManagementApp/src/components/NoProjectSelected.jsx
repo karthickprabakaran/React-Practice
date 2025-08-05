@@ -2,12 +2,7 @@ import { useState } from "react";
 import noProject from "../assets/no-projects.png";
 import Button from "./Button.jsx";
 
-const NoProjectSelected = ({ handleStartProject }) => {
-  const [projectState, setProjectState] = useState({
-    selectedProject: undefined,
-    projects: [],
-  });
-
+const NoProjectSelected = ({ onStartAddProject }) => {
   return (
     <div className="mt-24 text-center w-2/3">
       <img src={noProject} className="w-16 h-16 object-contain mx-auto" />
@@ -18,7 +13,7 @@ const NoProjectSelected = ({ handleStartProject }) => {
         Select a Project or get started with a new one{" "}
       </p>
       <p>
-        <Button onClick={handleStartProject}> Start a Project </Button>
+        <Button onClick={onStartAddProject}> Start a Project </Button>
       </p>
     </div>
   );
