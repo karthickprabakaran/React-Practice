@@ -1,15 +1,21 @@
 import { useRef } from "react";
 import Textinput from "./Textinput";
 
-const NewProject = () => {
+const NewProject = ({ onAdd }) => {
   const title = useRef();
   const description = useRef();
   const dueDate = useRef();
 
   function handleSave() {
-    const enteredTitle = tittle.current.value;
+    const enteredTitle = title.current.value;
     const enteredDescription = description.current.value;
     const enteredDate = dueDate.current.value;
+
+    onAdd({
+      title: enteredTitle,
+      description: enteredDate,
+      dueDate: enteredDate,
+    });
   }
 
   return (
