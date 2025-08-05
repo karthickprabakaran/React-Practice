@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Textinput from "./Textinput";
+import Modal from "./Modal.jsx";
 
 const NewProject = ({ onAdd, onCancel }) => {
   const title = useRef();
@@ -11,15 +12,23 @@ const NewProject = ({ onAdd, onCancel }) => {
     const enteredDescription = description.current.value;
     const enteredDate = dueDate.current.value;
 
-    if (!enteredDate) console.log(" the Date is not entered");
-    if (!enteredTitle) console.log("The Titile is not Entered");
-    if (!enteredDescription) console.log("The Descriptino is not Entered");
-
-    onAdd({
-      title: enteredTitle,
-      description: enteredDate,
-      dueDate: enteredDate,
-    });
+    if (
+      enteredTitle.trim() == "" ||
+      enteredDescription.trim() == "" ||
+      enteredDate.trim() == ""
+    ) {
+      //show the error model
+      <Modal>
+        <h1>there is an error in the given date or description or the title</h1>
+      </Modal>;
+    } else {
+      //push the details
+      onAdd({
+        title: enteredTitle,
+        description: enteredDate,
+        dueDate: enteredDate,
+      });
+    }
   }
 
   return (
