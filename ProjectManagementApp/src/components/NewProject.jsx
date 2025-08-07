@@ -34,7 +34,7 @@ const NewProject = ({ onAdd, onCancel }) => {
 
   return (
     <>
-      <Modal ref={modal}>
+      <Modal ref={modal} buttonCaption="Close">
         <h2> Invalid Input Values Provided</h2>{" "}
       </Modal>
       <div className="w-[35rem] mt-16">
