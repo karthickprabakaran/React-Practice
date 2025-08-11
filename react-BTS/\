@@ -5,15 +5,7 @@ function Counter() {
 
   function increment() {
     setCount((prev) => {
-      return ++prev;
-    })
-  }
-
-  function decrement() {
-    setCount((prev) => {
-
-      return --prev;
-
+      return prev++;
     })
   }
 
@@ -21,8 +13,7 @@ function Counter() {
     "div",
     null,
     React.createElement("p", null, `Count : ${count}`),
-    React.createElement("button", { onClick: increment }, "increment"),
-    React.createElement("button", { onClick: decrement }, "Decrement"),
+    React.createElement("button", { onClick: increment }, "increment")
   );
 }
 
