@@ -1,26 +1,41 @@
-import Button from "../components/Button.jsx";
+import Button from "./Button.jsx";
 
-const SideBar = ({ onStartAddProject, projects, handleSelectProject }) => {
+const SideBar = ({
+  onStartAddProject,
+  projects,
+  onSelect,
+  selectedProjectId,
+}) => {
   return (
-    <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-80rem rounded-r-xl">
+    <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-80 rounded-r-xl">
       <h1 className="mb-8 font-bold uppercase md:text-xl text-stone-200">
         Your Projects
       </h1>
-      {projects.map((project) => {
-        return (
-          <li className="list-none" key={project.id}>
-            <button
-              onClick={handleSelectProject(project.id)}
-              className="w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover:bg-stone-800"
-            >
-              {project.title}
-            </button>
-          </li>
-        );
-      })}
+      <ul>
+        {projects.map((project) => {
+          let cssClasses =
+            "w-full text-left px-2 py-1 rounded-sm my-1 hover:bg-stone-800";
 
+          if (selectedProjectId === project.id) {
+            cssClasses += " bg-stone-800 text-stone-200";
+          } else {
+            cssClasses += " text-stone-400";
+          }
+
+          return (
+            <li key={project.id}>
+              <button
+                onClick={() => onSelect(project.id)}
+                className={cssClasses}
+              >
+                {project.title}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
       <div>
-        <Button onClick={onStartAddProject}>Add Project +</Button>
+        <Button onClick={onStartAddProject}>+ Add Project</Button>
       </div>
     </aside>
   );
