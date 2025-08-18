@@ -9,10 +9,9 @@ export default function Header() {
 
       <img src={logo} alt="Investment Calculator Logo" />
       <p>
-        This calculator helps you estimate the future value of your investments based on your initial investment, annual contributions, expected return rate, and investment duration.
+        This calculator helps you estimate the future value of your investments based on your initial investment, annual
+        contributions, expected return rate, and investment duration.
       </p>
     </header>
   );
 }
-
-
