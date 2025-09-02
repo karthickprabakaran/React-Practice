@@ -7,6 +7,7 @@ import { useState } from "react";
 
 
 
+
 // NOTE: In this, the setCount function is the async - means they will get executed simultaneously so for the each
 // increment,
 // the code will count will be the 1 so, to fix this, we need to access the prev count and then update.
@@ -51,8 +52,11 @@ const handleInputChange = () => {
 }
 
 
-
-
 <input placeholder="First Name" type="text" name="firstName" onChange={hadleInputChange} />
 <input placeholder="Last Name" type="text" name="secondName" onChange={hadleInputChange} />
 <input placeholder="address" type="text" name="address" onChange={hadleInputChange} />
+
+
+
+
+
