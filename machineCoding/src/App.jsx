@@ -1,14 +1,12 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Accordian from './components/acordian'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h2>this is the main app</h2>
+      <Accordian />
     </>
   )
 }
