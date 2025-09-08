@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.inner-container button {
+  margin: 20px;
+}
+
+.img {
+  width: 300px;
+}
+
+
+.marker {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

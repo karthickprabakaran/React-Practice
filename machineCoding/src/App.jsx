@@ -3,13 +3,13 @@ import './App.css'
 import Accordian from './components/acordian'
 import { RandomColour } from './components/randomColour'
 import { StarRating } from './components/StarRating'
-import { Practice } from './components/StarRating/practice'
+import { ImageSlider } from './components/imageSlider/ImageSlider.jsx'
 
 function App() {
 
   return (
     <>
-      < Practice />
+      <ImageSlider />
     </>
   )
 }
