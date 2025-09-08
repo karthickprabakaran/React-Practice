@@ -37,7 +37,7 @@ export function StarRating({ numberOfStars }) {
         let starIndex = index + 1
         return (< FaStar
           key={starIndex}
-          className={(starIndex <= (hover || rating)) ? 'active' : 'inactive'}
+          className={(starIndex <= hover || rating) ? 'active' : 'inactive'}
           onClick={() => handleClick(starIndex)}
           onMouseEnter={() => handleMouseEnter(starIndex)}
           onMouseLeave={() => handleMouseLeave()}
