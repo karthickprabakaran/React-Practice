@@ -1,0 +1,148 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Password Reset</title>
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #3a4155;
+      margin: 0;
+      padding: 20px;
+    "
+  >
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background-color: #ffffff;
+              padding: 40px;
+              border: 1px solid #eaeaea;
+              color: #3a4155;
+            "
+          >
+            <!-- Logo -->
+            <tr>
+              <td align="left" style="padding-bottom: 20px">
+                <img
+                  src="https://res.cloudinary.com/dusfgsbzp/image/upload/v1753200408/gatherly-icon_b9xe7s.png"
+                  alt="Gatherly Logo"
+                  width="40"
+                  style="display: block"
+                />
+              </td>
+            </tr>
+
+            <!-- Greeting [48;55;156;935;1248t-->
+            <tr>
+              <td style="font-size: 16px; line-height: 1.6; color: #3a4155">
+                <p>Hi ${user},</p>
+                <p>
+                  Thanks for showing interest in a deal on Gatherly. Your
+                  request is now in motion! You can expect to hear from
+                  ${property.profileName}, the ${property.role} at
+                  ${property.profileName}, within the next 24–48 hours. In the
+                  meantime, here’s a quick summary of the offer:
+                </p>
+
+                <p><strong>Deal: </strong>${dealData.title}</p>
+                <p />
+                <p>
+                  <strong>Property name:</strong> **Hardcoded** Juniper Condos
+                </p>
+                <p><strong>Address:</strong> ${dealData.address}</p>
+                <p><strong>Move in:</strong> **Hardcoded** Immediately</p>
+                <p><strong>Rent:</strong> ${dealData.rent_per_month}</p>
+                <p><strong>Bedrooms:</strong>${dealData.no_of_beds}</p>
+                <p><strong>Bathrooms:</strong>${dealData.no_of_baths}</p>
+                <p>
+                  <strong>Square footage:</strong>${dealData.square_footage}
+                </p>
+                <p><strong>Neighbourhood:</strong>${dealData.neibhourhood}</p>
+                <p><strong>Description:</strong> ${dealData.description}</p>
+                <p>
+                  <strong>Note:</strong> The offer does not include free
+                  utilities.
+                </p>
+                <p><strong>Deal expiry:</strong> **hard coded**May 31, 2025</p>
+
+                <p>Best,<br />The Gatherly Team</p>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  font-size: 12px;
+                  color: #3a4155;
+                  padding-top: 40px;
+                  line-height: 1.5;
+                "
+              >
+                <p>
+                  This email was sent to you by Cradle Communities Inc., the
+                  owner of Gatherly.<br />
+                  Have a question? Contact us at
+                  <a href="mailto:help@gatherly.rent" style="color: #3a4155"
+                    >help@gatherly.rent</a
+                  >
+                </p>
+
+                <p>
+                  <a
+                    href="https://instagram.com"
+                    style="text-decoration: none; margin-right: 10px"
+                  >
+                    <img
+                      src="https://res.cloudinary.com/dusfgsbzp/image/upload/v1753200486/instagram-logo_fvircp.png"
+                      width="20"
+                      alt="Instagram"
+                      style="
+                        filter: brightness(0) saturate(100%) invert(21%)
+                          sepia(9%) saturate(444%) hue-rotate(180deg)
+                          brightness(94%) contrast(92%);
+                      "
+                    />
+                  </a>
+                  <a href="https://linkedin.com" style="text-decoration: none">
+                    <img
+                      src="https://img.icons8.com/ios-filled/50/linkedin.png"
+                      width="22"
+                      alt="LinkedIn"
+                      style="
+                        filter: brightness(0) saturate(100%) invert(21%)
+                          sepia(9%) saturate(444%) hue-rotate(180deg)
+                          brightness(94%) contrast(92%);
+                      "
+                    />
+                  </a>
+                </p>
+
+                <p>
+                  Made in Canada<br />
+                  Copyright © 2025 Cradle Communities Inc. All rights
+                  reserved.<br />
+                  By using Gatherly, you agree to our
+                  <a href="https://your-terms-link.com" style="color: #3a4155"
+                    >Terms of Use</a
+                  >
+                  and
+                  <a href="https://your-privacy-link.com" style="color: #3a4155"
+                    >Priva[48;55;156;935;1248tcy Policy</a
+                  >.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
