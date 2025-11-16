@@ -126,6 +126,7 @@ class CounterNew extends React.Component {
   }
 }
 
+
 // Ans 11 - Sending prop in class component
 class DisplayCount extends React.Component {
   render() {
