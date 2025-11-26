@@ -2,64 +2,47 @@ import { useState } from "react"
 import data from "./data";
 import "./styles.css";
 
-
 export default function Accordian() {
 
-  const [selected, setSelected] = useState(null);
-  const [enableMultiSelection, setEnableMultiSelection] = useState(false);
-  const [multiple, setMultiple] = useState([]);
-
-  function handleSingleSelect(getCurrentId) {
-    setSelected(getCurrentId === selected ? null : getCurrentId);
-  }
+  const [selected, setSelected] = useState(new Set());
 
 
-  function handleMultiSelection(getCurrentId) {
-    let cpyMul = [...multiple];
+  function handleSingleSelection(index) {
+    setSelected((prev) => {
+      let newSet = new Set(prev);
 
-    let index = cpyMul.indexOf(getCurrentId);
-
-    if (index === -1) {
-      cpyMul.push(getCurrentId);
-    } else {
-      cpyMul.splice(index, 1);
-    }
-
-    setMultiple(cpyMul);
-
-  }
-
-  console.log(selected, multiple);
-
-  return <div className="wrapper">
-    <button onClick={() => setEnableMultiSelection(!enableMultiSelection)}> Enable Multi Selection</button>
-    <div className="accordian">
-      {
-        data.length > 0 ?
-          data.map(item =>
-            <div className="item">
-              <div onClick={
-
-                enableMultiSelection
-                  ?
-                  () => handleMultiSelection(item.id)
-                  :
-                  () => handleSingleSelect(item.id)} className="title">
-                <h3>{item.question}</h3>
-                <span>+</span>
-              </div>
-              {
-                enableMultiSelection ?
-                  multiple.indexOf(item.id) !== -1 &&
-                  <div className="content">{item.answer}</div>
-                  : selected === item.id && <div className="content">{item.answer}</div>
-              }
-            </div>
-          )
-          : <h2>No Data is Found </h2>
+      if(!newSet.has(index)){
+        newSet.add(index);
+      }else{
+        newSet.delete(index);
       }
+
+      return newSet;
+
+
+    });
+  }
+
+  return (
+    <div className="wrapper">
+      <div className="accordian">
+        {data.length === 0 ? (
+          <h1>There is no Data to display</h1>
+        ) : (
+          data.map((item, index) => (
+            <div className="item">
+            <div onClick={ () => handleSingleSelection(item.id)} className="title" key={index}>
+              <h3>{item.question}</h3>
+              <span>+</span>
+              {selected.has(item.id) ?
+               <div className="content">{item.answer}</div>
+              :  null
+            }
+            </div>
+            </div>
+          ))
+        )}
+      </div>
     </div>
-  </div >
-
-
+  );
 }
