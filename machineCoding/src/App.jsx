@@ -9,7 +9,7 @@ import { Image } from "./components/imgSliderguided/Image.jsx";
 function App() {
   return (
     <>
-      <RandomColour/>
+      <StarRating/>
     </>
   );
 }
