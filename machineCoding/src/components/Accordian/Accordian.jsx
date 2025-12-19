@@ -4,17 +4,33 @@ import data from "./data.js"
 import './style.css';
 const Accordian = () => {
 
-
+  const [selectedArr, setSelectedArr] = useState([]);
   const [selected, setSelected] = useState(null);
   const [multiselection, setmultiSelection] = useState(false);
 
   function handleSelected(clickedId){
 
-    if(clickedId === selected){
-      setSelected(null);
+    if(multiselection){
+      setSelectedArr((prev)=> {
+        if(prev.includes(clickedId)){
+          let arr = prev.filter((it)=> {
+            return it !== clickedId;
+          })
+          return arr;
+        }else{
+            return [...prev, clickedId];
+        }
+      })
     }else{
-      setSelected(clickedId);
+      setSelected((prev)=>{
+        if(prev === clickedId){
+          return null;
+        }else{
+          return clickedId;
+        }
+     } )
     }
+    
   }
 
   function handleMultiselection(){
@@ -26,7 +42,8 @@ const Accordian = () => {
   return (
     <div className='wrapper'>
       <div className="accordian">
-      <button onClick={()=> handleMultiselection}>Enable MultiSelection</button>
+      <button onClick={()=> handleMultiselection()}>Enable MultiSelection</button>
+      <button onClick={()=> handleMultiselection()}>Disable MultiSelection</button>
         {
         data && data.length > 0 ?
           data.map((dat)=> {
@@ -35,7 +52,7 @@ const Accordian = () => {
                 <div onClick={()=> handleSelected(dat.id)} className="title">{dat.question}
                 <span onClick={()=> {handleSelected(dat.id)}}>+</span>
                 </div>
-                {dat.id === selected ? 
+                {(selectedArr.includes(dat.id) || selected === dat.id) ? 
                 <div className="answer">{dat.answer}</div>
               : null}
               </div>
