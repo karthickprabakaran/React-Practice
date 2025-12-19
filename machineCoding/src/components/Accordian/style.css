@@ -1,0 +1,18 @@
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    font-size: large;
+}
+
+.title{
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.answer{
+    text-align: center;
+}
